@@ -3,7 +3,7 @@ import 'package:github/github.dart';
 import 'package:intl/intl.dart' as intl;
 
 class Active {
-  bool activeLink = true;
+  static bool activeLink = true;
 }
 
 class GitHubStarCounter extends StatefulWidget {
@@ -55,14 +55,13 @@ class _GitHubStarCounterState extends State<GitHubStarCounter> {
           .getRepository(RepositorySlug.full(widget.repositoryName));
       setState(() {
         repository = repo;
-        Active().activeLink = true;
+        Active.activeLink = true;
       });
     } on RepositoryNotFound {
       setState(() {
         repository = null;
         errorMessage = '${widget.repositoryName} not found.';
-        Active().activeLink = false;
-        print(Active().activeLink);
+        Active.activeLink = false;
       });
     }
   }

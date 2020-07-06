@@ -68,15 +68,13 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.transparent,
                         textColor: Colors.blue,
                         onPressed: () => launch(
-                          Active().activeLink
+                          Active.activeLink
                               ? 'https://github.com/$_repositoryName'
                               : 'https://github.com/',
                           enableJavaScript: true,
                           enableDomStorage: true,
                         ),
-                        child: Active().activeLink
-                            ? Text('Go to $_repositoryName')
-                            : Text('Go to GitHub'),
+                        child: Text('Go to GitHub'),
                       ),
                       FlatButton(
                         color: Colors.transparent,
